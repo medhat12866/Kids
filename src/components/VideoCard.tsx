@@ -30,18 +30,18 @@ export function VideoCard({ video, onPlay, onToggleFavorite }: VideoCardProps) {
   };
 
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.2 }}
-    >
+    <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
       <Card className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
-        <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200" onClick={onPlay}>
+        <div
+          className="relative h-60 aspect-video bg-gradient-to-br from-gray-100 to-gray-200"
+          onClick={onPlay}
+        >
           <ImageWithFallback
             src={video.thumbnail}
             alt={video.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover "
           />
-          
+
           {/* Play overlay */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
             <motion.div
@@ -49,7 +49,10 @@ export function VideoCard({ video, onPlay, onToggleFavorite }: VideoCardProps) {
               whileHover={{ scale: 1, opacity: 1 }}
               className="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg"
             >
-              <Play className="w-6 h-6 text-[#FF6B9D] mr-1" fill="currentColor" />
+              <Play
+                className="w-6 h-6 text-[#FF6B9D] mr-1"
+                fill="currentColor"
+              />
             </motion.div>
           </div>
 
@@ -66,7 +69,7 @@ export function VideoCard({ video, onPlay, onToggleFavorite }: VideoCardProps) {
             onClick={handleFavoriteClick}
             className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
           >
-            <Heart 
+            <Heart
               className={`w-5 h-5 transition-colors ${
                 isFavorite ? "text-[#FF6B9D] fill-current" : "text-gray-400"
               }`}
@@ -82,13 +85,13 @@ export function VideoCard({ video, onPlay, onToggleFavorite }: VideoCardProps) {
 
         <div className="p-4 space-y-2">
           <h4 className="line-clamp-2">{video.title}</h4>
-          
+
           <div className="flex items-center gap-2 flex-wrap">
             <Badge variant="secondary" className="rounded-full">
               {video.ageRange}
             </Badge>
-            <Badge 
-              variant="outline" 
+            <Badge
+              variant="outline"
               className="rounded-full border-[#9C6FFF] text-[#9C6FFF]"
             >
               {video.topic}

@@ -12,16 +12,17 @@ import { FavoritesPage } from "./pages/FavoritesPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { ParentDashboardPage } from "./pages/ParentDashboardPage";
 import "./styles/globals.css";
+import { Footer } from "./components/Footer";
 
-type PageType = 
-  | "home" 
-  | "videos" 
-  | "video-player" 
-  | "stories" 
+type PageType =
+  | "home"
+  | "videos"
+  | "video-player"
+  | "stories"
   | "story-reader"
-  | "games" 
-  | "activities" 
-  | "favorites" 
+  | "games"
+  | "activities"
+  | "favorites"
   | "profile"
   | "parent-dashboard";
 
@@ -33,7 +34,7 @@ export default function App() {
     setCurrentPage(page as PageType);
     setSelectedId(id);
     // Scroll to top on navigation
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const renderPage = () => {
@@ -43,11 +44,15 @@ export default function App() {
       case "videos":
         return <VideosPage onNavigate={handleNavigate} />;
       case "video-player":
-        return <VideoPlayerPage videoId={selectedId} onNavigate={handleNavigate} />;
+        return (
+          <VideoPlayerPage videoId={selectedId} onNavigate={handleNavigate} />
+        );
       case "stories":
         return <StoriesPage onNavigate={handleNavigate} />;
       case "story-reader":
-        return <StoryReaderPage storyId={selectedId} onNavigate={handleNavigate} />;
+        return (
+          <StoryReaderPage storyId={selectedId} onNavigate={handleNavigate} />
+        );
       case "games":
         return <GamesPage onNavigate={handleNavigate} />;
       case "activities":
@@ -64,7 +69,10 @@ export default function App() {
   };
 
   // Pages that should not show navigation
-  const hideNavigation = currentPage === "video-player" || currentPage === "story-reader" || currentPage === "parent-dashboard";
+  const hideNavigation =
+    currentPage === "video-player" ||
+    currentPage === "story-reader" ||
+    currentPage === "parent-dashboard";
 
   return (
     <div className="min-h-screen bg-background">
@@ -74,15 +82,24 @@ export default function App() {
       )}
 
       {/* Main Content */}
-      <main className={`${!hideNavigation ? 'pb-24 md:pb-8' : ''} ${!hideNavigation ? 'pt-4' : ''}`}>
-        <div className={hideNavigation ? '' : 'max-w-[1280px] mx-auto'}>
+      <main
+        className={`${!hideNavigation ? "pb-24 md:pb-8" : ""} ${
+          !hideNavigation ? "pt-4" : ""
+        }`}
+      >
+        <div className={hideNavigation ? "" : "max-w-[1280px] mx-auto"}>
           {renderPage()}
         </div>
       </main>
 
+      <Footer  />
+
       {/* Bottom Navigation - Mobile */}
       {!hideNavigation && (
-        <BottomNavigation currentPage={currentPage} onNavigate={handleNavigate} />
+        <BottomNavigation
+          currentPage={currentPage}
+          onNavigate={handleNavigate}
+        />
       )}
     </div>
   );

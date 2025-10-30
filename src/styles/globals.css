@@ -1,22 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap");
 
-@custom-variant dark (&:is(.dark *));
-
+/* Dark mode is handled by Tailwind */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+@import "tailwindcss";
 :root {
   --font-size: 16px;
-  --background: #FEF9F5;
-  --foreground: #2D2D3A;
+  --background: #fef9f5;
+  --foreground: #2d2d3a;
   --card: #ffffff;
-  --card-foreground: #2D2D3A;
+  --card-foreground: #2d2d3a;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #FF6B9D;
+  --primary: #ff6b9d;
   --primary-foreground: #ffffff;
-  --secondary: #FFB84D;
-  --secondary-foreground: #2D2D3A;
+  --secondary: #ffb84d;
+  --secondary-foreground: #2d2d3a;
   --muted: #ececf0;
   --muted-foreground: #717182;
-  --accent: #9C6FFF;
+  --accent: #9c6fff;
   --accent-foreground: #ffffff;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
@@ -41,14 +46,14 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  
+
   /* Kids platform colors */
-  --color-pink: #FF6B9D;
-  --color-purple: #9C6FFF;
-  --color-blue: #4ECAFF;
-  --color-green: #5FD08A;
-  --color-yellow: #FFB84D;
-  --color-orange: #FF8B67;
+  --color-pink: #ff6b9d;
+  --color-purple: #9c6fff;
+  --color-blue: #4ecaff;
+  --color-green: #5fd08a;
+  --color-yellow: #ffb84d;
+  --color-orange: #ff8b67;
 }
 
 .dark {
@@ -88,7 +93,7 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
-@theme inline {
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -131,12 +136,14 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: rgba(var(--ring), 0.5);
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Cairo', 'Noto Kufi Arabic', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Cairo", "Noto Kufi Arabic", sans-serif;
     direction: rtl;
   }
 }

@@ -20,12 +20,9 @@ interface ActivityCardProps {
 
 export function ActivityCard({ activity, onStart }: ActivityCardProps) {
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.2 }}
-    >
+    <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
       <Card className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200">
+        <div className="relative h-60 aspect-video bg-linear-to-br from-gray-100 to-gray-200">
           <ImageWithFallback
             src={activity.thumbnail}
             alt={activity.title}
@@ -48,7 +45,7 @@ export function ActivityCard({ activity, onStart }: ActivityCardProps) {
         <div className="p-4 space-y-3">
           <div className="space-y-2">
             <h4 className="line-clamp-2">{activity.title}</h4>
-            
+
             <div className="flex items-center gap-2">
               <Badge variant="secondary" className="rounded-full">
                 {activity.difficulty}
@@ -63,11 +60,11 @@ export function ActivityCard({ activity, onStart }: ActivityCardProps) {
           <div className="flex gap-2">
             <Button
               onClick={onStart}
-              className="flex-1 h-11 rounded-full bg-gradient-to-r from-[#FFB84D] to-[#FF8B67] hover:opacity-90"
+              className="flex-1 h-11 rounded-full bg-linear-to-r from-[#FFB84D] to-[#FF8B67] hover:opacity-90"
             >
               <span>ابدأ النشاط</span>
             </Button>
-            
+
             {activity.printable && (
               <Button
                 variant="outline"

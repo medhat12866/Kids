@@ -24,24 +24,21 @@ export function StoryCard({ story, onRead, onListen }: StoryCardProps) {
   const [isFavorite, setIsFavorite] = useState(story.favorite || false);
 
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.2 }}
-    >
+    <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
       <Card className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div className="relative aspect-[3/4] bg-gradient-to-br from-[#FFB84D]/20 to-[#FF8B67]/20">
+        <div className="relative h-60 aspect-[3/4] bg-gradient-to-br from-[#FFB84D]/20 to-[#FF8B67]/20">
           <ImageWithFallback
             src={story.cover}
             alt={story.title}
             className="w-full h-full object-cover"
           />
-          
+
           {/* Favorite button */}
           <button
             onClick={() => setIsFavorite(!isFavorite)}
             className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
           >
-            <Heart 
+            <Heart
               className={`w-5 h-5 transition-colors ${
                 isFavorite ? "text-[#FF6B9D] fill-current" : "text-gray-400"
               }`}
@@ -56,7 +53,7 @@ export function StoryCard({ story, onRead, onListen }: StoryCardProps) {
 
         <div className="p-4 space-y-3">
           <h4 className="line-clamp-2">{story.title}</h4>
-          
+
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <BookOpen className="w-4 h-4" />
             <span>{story.narrator}</span>
@@ -79,7 +76,7 @@ export function StoryCard({ story, onRead, onListen }: StoryCardProps) {
               <BookOpen className="w-4 h-4 ml-2" />
               <span>اقرأ</span>
             </Button>
-            
+
             <Button
               onClick={onListen}
               variant="outline"

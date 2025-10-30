@@ -5,13 +5,16 @@ interface BottomNavigationProps {
   onNavigate: (page: string) => void;
 }
 
-export function BottomNavigation({ currentPage, onNavigate }: BottomNavigationProps) {
+export function BottomNavigation({
+  currentPage,
+  onNavigate,
+}: BottomNavigationProps) {
   const navItems = [
     { id: "home", label: "الرئيسية", icon: Home },
     { id: "videos", label: "المكتبة", icon: Library },
     { id: "games", label: "ألعاب", icon: Gamepad2 },
     { id: "favorites", label: "المفضلة", icon: Heart },
-    { id: "profile", label: "الملف", icon: User }
+    { id: "profile", label: "الملف", icon: User },
   ];
 
   return (
@@ -20,24 +23,24 @@ export function BottomNavigation({ currentPage, onNavigate }: BottomNavigationPr
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = currentPage === item.id;
-          
+
           return (
             <button
               key={item.id}
               onClick={() => onNavigate(item.id)}
               className={`flex flex-col items-center justify-center gap-1 min-w-[60px] h-16 rounded-2xl transition-all duration-300 ${
-                isActive 
-                  ? "bg-gradient-to-br from-[#FF6B9D]/10 to-[#9C6FFF]/10" 
+                isActive
+                  ? "bg-linear-to-br from-[#FF6B9D]/10 to-[#9C6FFF]/10"
                   : "hover:bg-gray-50"
               }`}
             >
-              <Icon 
+              <Icon
                 className={`w-6 h-6 transition-colors ${
                   isActive ? "text-[#9C6FFF]" : "text-gray-500"
                 }`}
                 strokeWidth={isActive ? 2.5 : 2}
               />
-              <span 
+              <span
                 className={`text-xs transition-colors ${
                   isActive ? "text-[#9C6FFF]" : "text-gray-500"
                 }`}

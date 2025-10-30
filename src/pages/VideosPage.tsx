@@ -2,7 +2,13 @@ import { useState } from "react";
 import { VideoCard } from "../components/VideoCard";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select";
 import { Search, Filter } from "lucide-react";
 import { videos } from "../data/sampleData";
 
@@ -16,7 +22,9 @@ export function VideosPage({ onNavigate }: VideosPageProps) {
   const [topicFilter, setTopicFilter] = useState("all");
 
   const filteredVideos = videos.filter((video) => {
-    const matchesSearch = video.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = video.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
     const matchesAge = ageFilter === "all" || video.ageRange === ageFilter;
     const matchesTopic = topicFilter === "all" || video.topic === topicFilter;
     return matchesSearch && matchesAge && matchesTopic;
@@ -26,7 +34,7 @@ export function VideosPage({ onNavigate }: VideosPageProps) {
     <div className="space-y-6 px-4">
       <div className="space-y-4">
         <h1>مكتبة الفيديوهات</h1>
-        
+
         {/* Search Bar */}
         <div className="relative">
           <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -42,9 +50,9 @@ export function VideosPage({ onNavigate }: VideosPageProps) {
         {/* Filters */}
         <div className="flex gap-3 flex-wrap items-center">
           <Filter className="w-5 h-5 text-muted-foreground" />
-          
+
           <Select value={ageFilter} onValueChange={setAgeFilter}>
-            <SelectTrigger className="w-[160px] h-11 rounded-full border-2">
+            <SelectTrigger className="w-40 h-11 rounded-full border-2">
               <SelectValue placeholder="العمر" />
             </SelectTrigger>
             <SelectContent>
@@ -56,7 +64,7 @@ export function VideosPage({ onNavigate }: VideosPageProps) {
           </Select>
 
           <Select value={topicFilter} onValueChange={setTopicFilter}>
-            <SelectTrigger className="w-[160px] h-11 rounded-full border-2">
+            <SelectTrigger className="w-40 h-11 rounded-full border-2">
               <SelectValue placeholder="الموضوع" />
             </SelectTrigger>
             <SelectContent>
@@ -102,7 +110,7 @@ export function VideosPage({ onNavigate }: VideosPageProps) {
 
       {filteredVideos.length === 0 && (
         <div className="text-center py-16">
-          <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#9C6FFF]/10 to-[#4ECAFF]/10 flex items-center justify-center">
+          <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-br from-[#9C6FFF]/10 to-[#4ECAFF]/10 flex items-center justify-center">
             <Search className="w-12 h-12 text-muted-foreground" />
           </div>
           <h3 className="text-muted-foreground mb-2">لم نجد نتائج</h3>

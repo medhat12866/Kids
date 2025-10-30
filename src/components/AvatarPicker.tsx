@@ -11,8 +11,13 @@ const avatarOptions = [
   { id: 4, emoji: "🦊", color: "from-[#FF8B67] to-[#FFB84D]", name: "ثعلب" },
   { id: 5, emoji: "🐼", color: "from-[#4ECAFF] to-[#5FD08A]", name: "باندا" },
   { id: 6, emoji: "🐨", color: "from-[#B991FF] to-[#9C6FFF]", name: "كوالا" },
-  { id: 7, emoji: "🦄", color: "from-[#FF6B9D] to-[#9C6FFF]", name: "يونيكورن" },
-  { id: 8, emoji: "🐸", color: "from-[#5FD08A] to-[#4ECAFF]", name: "ضفدع" }
+  {
+    id: 7,
+    emoji: "🦄",
+    color: "from-[#FF6B9D] to-[#9C6FFF]",
+    name: "يونيكورن",
+  },
+  { id: 8, emoji: "🐸", color: "from-[#5FD08A] to-[#4ECAFF]", name: "ضفدع" },
 ];
 
 interface AvatarPickerProps {
@@ -31,7 +36,7 @@ export function AvatarPicker({ selectedId = 1, onSelect }: AvatarPickerProps) {
   return (
     <Card className="border-0 shadow-lg p-6">
       <h3 className="mb-6">اختر صورتك الشخصية</h3>
-      
+
       <div className="grid grid-cols-4 gap-4">
         {avatarOptions.map((avatar) => (
           <motion.button
@@ -41,15 +46,17 @@ export function AvatarPicker({ selectedId = 1, onSelect }: AvatarPickerProps) {
             whileTap={{ scale: 0.95 }}
             className="relative"
           >
-            <div 
-              className={`aspect-square rounded-2xl bg-gradient-to-br ${avatar.color} flex items-center justify-center text-4xl transition-all ${
-                selected === avatar.id 
-                  ? "ring-4 ring-[#9C6FFF] ring-offset-2" 
+            <div
+              className={`aspect-square rounded-2xl bg-linear-to-br ${
+                avatar.color
+              } flex items-center justify-center text-4xl transition-all ${
+                selected === avatar.id
+                  ? "ring-4 ring-[#9C6FFF] ring-offset-2"
                   : "hover:shadow-lg"
               }`}
             >
               {avatar.emoji}
-              
+
               {selected === avatar.id && (
                 <motion.div
                   initial={{ scale: 0 }}
@@ -67,9 +74,7 @@ export function AvatarPicker({ selectedId = 1, onSelect }: AvatarPickerProps) {
         ))}
       </div>
 
-      <Button 
-        className="w-full h-12 rounded-full bg-gradient-to-r from-[#9C6FFF] to-[#4ECAFF] hover:opacity-90 mt-6"
-      >
+      <Button className="w-full h-12 rounded-full bg-linear-to-r from-[#9C6FFF] to-[#4ECAFF] hover:opacity-90 mt-6">
         حفظ الصورة
       </Button>
     </Card>
