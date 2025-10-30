@@ -16,15 +16,16 @@ import { ErrorBoundary } from "./components/ErrorBoundary";
 import { AppProvider } from "./contexts/AppContext";
 import "./styles/globals.css";
 
-type PageType = 
-  | "home" 
-  | "videos" 
-  | "video-player" 
-  | "stories" 
+
+type PageType =
+  | "home"
+  | "videos"
+  | "video-player"
+  | "stories"
   | "story-reader"
-  | "games" 
-  | "activities" 
-  | "favorites" 
+  | "games"
+  | "activities"
+  | "favorites"
   | "profile"
   | "parent-dashboard"
   | "admin-dashboard";
@@ -35,10 +36,10 @@ export default function App() {
 
   // Sync with URL
   useEffect(() => {
-    const path = window.location.pathname.slice(1) || 'home';
+    const path = window.location.pathname.slice(1) || "home";
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    
+    const id = params.get("id");
+
     if (path && path !== currentPage) {
       setCurrentPage(path as PageType);
       if (id) setSelectedId(parseInt(id));
@@ -48,28 +49,28 @@ export default function App() {
   const handleNavigate = (page: string, id?: number) => {
     setCurrentPage(page as PageType);
     setSelectedId(id);
-    
+
     // Update URL without page reload
     const url = id ? `/${page}?id=${id}` : `/${page}`;
-    window.history.pushState({}, '', url);
-    
+    window.history.pushState({}, "", url);
+
     // Scroll to top on navigation
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Handle browser back/forward
   useEffect(() => {
     const handlePopState = () => {
-      const path = window.location.pathname.slice(1) || 'home';
+      const path = window.location.pathname.slice(1) || "home";
       const params = new URLSearchParams(window.location.search);
-      const id = params.get('id');
-      
+      const id = params.get("id");
+
       setCurrentPage(path as PageType);
       if (id) setSelectedId(parseInt(id));
     };
 
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   const renderPage = () => {
@@ -79,11 +80,15 @@ export default function App() {
       case "videos":
         return <VideosPage onNavigate={handleNavigate} />;
       case "video-player":
-        return <VideoPlayerPage videoId={selectedId} onNavigate={handleNavigate} />;
+        return (
+          <VideoPlayerPage videoId={selectedId} onNavigate={handleNavigate} />
+        );
       case "stories":
         return <StoriesPage onNavigate={handleNavigate} />;
       case "story-reader":
-        return <StoryReaderPage storyId={selectedId} onNavigate={handleNavigate} />;
+        return (
+          <StoryReaderPage storyId={selectedId} onNavigate={handleNavigate} />
+        );
       case "games":
         return <GamesPage onNavigate={handleNavigate} />;
       case "activities":
@@ -102,7 +107,11 @@ export default function App() {
   };
 
   // Pages that should not show navigation
-  const hideNavigation = currentPage === "video-player" || currentPage === "story-reader" || currentPage === "parent-dashboard" || currentPage === "admin-dashboard";
+  const hideNavigation =
+    currentPage === "video-player" ||
+    currentPage === "story-reader" ||
+    currentPage === "parent-dashboard" ||
+    currentPage === "admin-dashboard";
 
   return (
     <ErrorBoundary>
@@ -110,21 +119,32 @@ export default function App() {
         <div className="min-h-screen bg-background">
           {/* Top Navigation - Desktop */}
           {!hideNavigation && (
-            <TopNavigation currentPage={currentPage} onNavigate={handleNavigate} />
+            <TopNavigation
+              currentPage={currentPage}
+              onNavigate={handleNavigate}
+            />
           )}
 
           {/* Main Content */}
-          <main className={`${!hideNavigation ? 'pb-24 md:pb-8' : ''} ${!hideNavigation ? 'pt-4' : ''}`}>
-            <div className={hideNavigation ? '' : 'max-w-[1280px] mx-auto'}>
+          <main
+            className={`${!hideNavigation ? "pb-24 md:pb-8" : ""} ${
+              !hideNavigation ? "pt-4" : ""
+            }`}
+          >
+            <div className={hideNavigation ? "" : "max-w-[1280px] mx-auto"}>
               {renderPage()}
             </div>
           </main>
 
           {/* Bottom Navigation - Mobile */}
           {!hideNavigation && (
-            <BottomNavigation currentPage={currentPage} onNavigate={handleNavigate} />
+            <BottomNavigation
+              currentPage={currentPage}
+              onNavigate={handleNavigate}
+            />
           )}
         </div>
+
       </AppProvider>
     </ErrorBoundary>
   );
