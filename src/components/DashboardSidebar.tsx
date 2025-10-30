@@ -1,17 +1,18 @@
-import React from 'react';
-import { 
-  LayoutDashboard, 
-  Video, 
-  BookOpen, 
-  Users, 
-  BarChart3, 
-  Settings, 
-  MessageCircle, 
+import React from "react";
+
+import {
+  LayoutDashboard,
+  Video,
+  BookOpen,
+  Users,
+  BarChart3,
+  Settings,
+  MessageCircle,
   LogOut,
   Menu,
-  X
-} from 'lucide-react';
-import { Button } from './ui/button';
+  X,
+} from "lucide-react";
+import { Button } from "./ui/button";
 
 interface DashboardSidebarProps {
   isOpen: boolean;
@@ -21,35 +22,40 @@ interface DashboardSidebarProps {
 }
 
 const menuItems = [
-  { id: 'overview', label: 'نظرة عامة', icon: LayoutDashboard },
-  { id: 'videos', label: 'إدارة الفيديوهات', icon: Video },
-  { id: 'lessons', label: 'إدارة الدروس', icon: BookOpen },
-  { id: 'users', label: 'إدارة المستخدمين', icon: Users },
-  { id: 'reports', label: 'التقارير والإحصائيات', icon: BarChart3 },
-  { id: 'settings', label: 'الإعدادات', icon: Settings },
-  { id: 'support', label: 'الدعم', icon: MessageCircle },
+  { id: "overview", label: "نظرة عامة", icon: LayoutDashboard },
+  { id: "videos", label: "إدارة الفيديوهات", icon: Video },
+  { id: "lessons", label: "إدارة الدروس", icon: BookOpen },
+  { id: "users", label: "إدارة المستخدمين", icon: Users },
+  { id: "reports", label: "التقارير والإحصائيات", icon: BarChart3 },
+  { id: "settings", label: "الإعدادات", icon: Settings },
+  { id: "support", label: "الدعم", icon: MessageCircle },
 ];
 
-export function DashboardSidebar({ isOpen, onToggle, activeSection, onSectionChange }: DashboardSidebarProps) {
+export function DashboardSidebar({
+  isOpen,
+  onToggle,
+  activeSection,
+  onSectionChange,
+}: DashboardSidebarProps) {
   return (
     <>
       {/* Mobile Overlay */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={onToggle}
         />
       )}
 
       {/* Sidebar */}
-      <aside 
+      <aside
         className={`
           fixed lg:sticky top-0 right-0 h-screen bg-white z-50
           transition-transform duration-300 ease-in-out
-          ${isOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'}
+          ${isOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"}
           w-72 lg:w-64 border-l border-gray-200 flex flex-col
         `}
-        style={{ direction: 'rtl' }}
+        style={{ direction: "rtl" }}
       >
         {/* Sidebar Header */}
         <div className="p-6 border-b border-gray-200 flex items-center justify-between">
@@ -78,7 +84,7 @@ export function DashboardSidebar({ isOpen, onToggle, activeSection, onSectionCha
             {menuItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
-              
+
               return (
                 <li key={item.id}>
                   <button
@@ -91,9 +97,10 @@ export function DashboardSidebar({ isOpen, onToggle, activeSection, onSectionCha
                     className={`
                       w-full flex items-center gap-3 px-4 py-3 rounded-xl
                       transition-all duration-200
-                      ${isActive 
-                        ? 'bg-gradient-to-l from-purple-100 to-pink-100 text-purple-700' 
-                        : 'text-gray-600 hover:bg-gray-50'
+                      ${
+                        isActive
+                          ? "bg-gradient-to-l from-purple-100 to-pink-100 text-purple-700"
+                          : "text-gray-600 hover:bg-gray-50"
                       }
                     `}
                   >
