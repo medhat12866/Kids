@@ -4,7 +4,7 @@ import { Progress } from "../components/ui/progress";
 import { Badge } from "../components/ui/badge";
 import { 
   User, Edit, Trophy, Star, Award, Lock,
-  Target, Book, Video, Gamepad2
+  Target, Book, Video, Gamepad2, Shield
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { childProfile, badges } from "../data/sampleData";
@@ -166,6 +166,15 @@ export function ProfilePage({ onNavigate }: ProfilePageProps) {
           >
             <Trophy className="w-5 h-5 ml-3" />
             <span>لوحة تحكم الأهل</span>
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            className="w-full h-12 rounded-full justify-start bg-gradient-to-l from-purple-50 to-pink-50 border-purple-200 hover:bg-gradient-to-l hover:from-purple-100 hover:to-pink-100"
+            onClick={() => onNavigate("admin-dashboard")}
+          >
+            <Shield className="w-5 h-5 ml-3 text-purple-600" />
+            <span className="text-purple-700">لوحة تحكم المشرف</span>
           </Button>
         </div>
       </Card>

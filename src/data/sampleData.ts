@@ -3,83 +3,76 @@
 export const videos = [
   {
     id: 1,
-    title: "ليلى تتعلم الصدق | قصة جميلة عن الصدق",
-    titleEn: "Laila Learns Honesty",
-    thumbnail: "https://i.ytimg.com/vi/MYCwYgrwuI8/hqdefault.jpg",
-    url: "https://www.youtube.com/watch?v=MYCwYgrwuI8",
-    duration: "غير معروف بدقة", // يمكنك استخدام YouTube API للحصول على المدة الدقيقة
-    ageRange: "6-10 سنوات",
-    topic: "القيم / أخلاق",
-    description: "قصة ليلى التي كانت تكذب كثيرًا لكنها تعلمت أن الصدق أفضل.",
+    title: "تعلم الصدق مع ياسر",
+    titleEn: "Learn Honesty with Yasser",
+    thumbnail: "https://images.unsplash.com/photo-1565373086464-c8af0d586c0c?w=400",
+    duration: "12 دقيقة",
+    ageRange: "6-8 سنوات",
+    topic: "القيم",
+    description: "قصة تعليمية عن أهمية الصدق في حياتنا اليومية",
     watched: false,
-    favorite: false,
+    favorite: false
   },
   {
     id: 2,
-    title: "الحروف الهجائية للاطفال",
-    titleEn: "Arabic Alphabet for Kids",
-    thumbnail: "https://i.ytimg.com/vi/cFRYY3t-cCA/hqdefault.jpg",
-    url: "https://www.youtube.com/watch?v=cFRYY3t-cCA",
-    duration: "غير معروف بدقة",
-    ageRange: "3-6 سنوات",
-    topic: "اللغة / الحروف",
-    description: "تعليم الحروف العربية للأطفال بطريقة ممتعة.",
-    watched: false,
-    favorite: false,
+    title: "مغامرات الحروف الأبجدية",
+    titleEn: "Alphabet Adventures",
+    thumbnail: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400",
+    duration: "15 دقيقة",
+    ageRange: "6-7 سنوات",
+    topic: "اللغة",
+    description: "تعلم الحروف العربية بطريقة ممتعة وتفاعلية",
+    watched: true,
+    favorite: true
   },
   {
     id: 3,
-    title: "الصدق والكذب ( الأخلاق في الإسلام ) | فيديو تعليمي",
-    titleEn: "Truth and Lie (Ethics in Islam)",
-    thumbnail: "https://i.ytimg.com/vi/uBesSLLwkbg/hqdefault.jpg",
-    url: "https://www.youtube.com/watch?v=uBesSLLwkbg",
-    duration: "غير معروف بدقة",
-    ageRange: "8-12 سنوات",
-    topic: "الدين / الأخلاق",
-    description: "شرح الفرق بين الصدق والكذب وأهمية الصدق في الإسلام.",
+    title: "قصة النبي يوسف",
+    titleEn: "Prophet Yusuf's Story",
+    thumbnail: "https://images.unsplash.com/photo-1684859634430-3fb8d390e119?w=400",
+    duration: "20 دقيقة",
+    ageRange: "8-10 سنوات",
+    topic: "القصص الدينية",
+    description: "قصة ملهمة عن الصبر والأمل",
     watched: false,
-    favorite: false,
+    favorite: false
   },
   {
     id: 4,
-    title: "لا تكذب أبداً ! || درس جميل للأطفال عن الصدق في الإسلام",
-    titleEn: "Never Lie! || Lesson for Kids on Honesty in Islam",
-    thumbnail: "https://i.ytimg.com/vi/8Pgg5a-7e9w/hqdefault.jpg",
-    url: "https://www.youtube.com/watch?v=8Pgg5a-7e9w",
-    duration: "غير معروف بدقة",
-    ageRange: "6-10 سنوات",
-    topic: "الدين / القيم",
-    description:
-      "كرتون تعليمي للأطفال يعرض لماذا لا يجب الكذب ويعزز قيمة الصدق.",
+    title: "عالم الأرقام السحري",
+    titleEn: "Magical Numbers World",
+    thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400",
+    duration: "10 دقائق",
+    ageRange: "6-7 سنوات",
+    topic: "الرياضيات",
+    description: "تعلم الأرقام والعد بطريقة مرحة",
     watched: false,
-    favorite: false,
+    favorite: false
   },
   {
     id: 5,
-    title: "قصة جمال الصدق - قصة عن الصدق | قناة سنا",
-    titleEn: "The Beauty of Honesty – Story of Honesty",
-    thumbnail: "https://i.ytimg.com/vi/KiRaco7D58Y/hqdefault.jpg",
-    url: "https://www.youtube.com/watch?v=KiRaco7D58Y",
-    duration: "غير معروف بدقة",
-    ageRange: "6-10 سنوات",
-    topic: "القيم / القصص",
-    description: "قصة تدريبية للأطفال عن قيمة الصدق من قناة سنا.",
+    title: "كوكبنا الجميل",
+    titleEn: "Our Beautiful Planet",
+    thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400",
+    duration: "18 دقيقة",
+    ageRange: "8-10 سنوات",
+    topic: "العلوم",
+    description: "رحلة ممتعة لاكتشاف كوكب الأرض",
     watched: false,
-    favorite: false,
+    favorite: true
   },
   {
     id: 6,
-    title: "كارتون قيم إسلامية 2 : في الصدق السلامة",
-    titleEn: "Islamic Values Cartoon 2: In Honesty Safety",
-    thumbnail: "https://i.ytimg.com/vi/au1WQmHrq-E/hqdefault.jpg",
-    url: "https://www.youtube.com/watch?v=au1WQmHrq-E",
-    duration: "غير معروف بدقة",
-    ageRange: "4-8 سنوات",
-    topic: "الدين / القيم",
-    description: "فلاش كارتوني للصغار يناقش الصدق كقيمة مهمة.",
-    watched: false,
-    favorite: false,
-  },
+    title: "حديقة الحيوانات",
+    titleEn: "Zoo Adventure",
+    thumbnail: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400",
+    duration: "14 دقيقة",
+    ageRange: "6-8 سنوات",
+    topic: "الحيوانات",
+    description: "تعرف على أصدقائنا من الحيوانات",
+    watched: true,
+    favorite: false
+  }
 ];
 
 export const stories = [
@@ -92,7 +85,7 @@ export const stories = [
     duration: "8 دقائق",
     ageRange: "6-8 سنوات",
     description: "قصة جميلة عن الشجاعة والثقة بالنفس",
-    favorite: true,
+    favorite: true
   },
   {
     id: 2,
@@ -103,7 +96,7 @@ export const stories = [
     duration: "10 دقائق",
     ageRange: "6-9 سنوات",
     description: "قصة عن اللطف ومساعدة الآخرين",
-    favorite: false,
+    favorite: false
   },
   {
     id: 3,
@@ -114,8 +107,8 @@ export const stories = [
     duration: "7 دقائق",
     ageRange: "6-8 سنوات",
     description: "تعلم قيمة العمل الجاد والمثابرة",
-    favorite: true,
-  },
+    favorite: true
+  }
 ];
 
 export const games = [
@@ -128,7 +121,7 @@ export const games = [
     xpReward: 50,
     progress: 75,
     color: "from-[#4ECAFF] to-[#5FD08A]",
-    category: "رياضيات",
+    category: "رياضيات"
   },
   {
     id: 2,
@@ -139,7 +132,7 @@ export const games = [
     xpReward: 75,
     progress: 40,
     color: "from-[#9C6FFF] to-[#B991FF]",
-    category: "لغة",
+    category: "لغة"
   },
   {
     id: 3,
@@ -150,7 +143,7 @@ export const games = [
     xpReward: 30,
     progress: 100,
     color: "from-[#FFB84D] to-[#FF8B67]",
-    category: "فنون",
+    category: "فنون"
   },
   {
     id: 4,
@@ -161,8 +154,8 @@ export const games = [
     xpReward: 60,
     progress: 20,
     color: "from-[#FF6B9D] to-[#FF8B67]",
-    category: "ذاكرة",
-  },
+    category: "ذاكرة"
+  }
 ];
 
 export const activities = [
@@ -172,10 +165,9 @@ export const activities = [
     titleEn: "Draw your dream house",
     difficulty: "سهل",
     category: "رسم",
-    thumbnail:
-      "https://images.unsplash.com/photo-1579594124477-1bdbb77ab939?w=400",
+    thumbnail: "https://images.unsplash.com/photo-1579594124477-1bdbb77ab939?w=400",
     steps: 5,
-    printable: true,
+    printable: true
   },
   {
     id: 2,
@@ -183,10 +175,9 @@ export const activities = [
     titleEn: "Make a rainbow experiment",
     difficulty: "متوسط",
     category: "علوم",
-    thumbnail:
-      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400",
+    thumbnail: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400",
     steps: 7,
-    printable: true,
+    printable: true
   },
   {
     id: 3,
@@ -194,30 +185,17 @@ export const activities = [
     titleEn: "Create a greeting card",
     difficulty: "سهل",
     category: "حرف يدوية",
-    thumbnail:
-      "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=400",
+    thumbnail: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=400",
     steps: 4,
-    printable: true,
-  },
+    printable: true
+  }
 ];
 
 export const badges = [
   { id: 1, name: "قارئ ماهر", icon: "book", unlocked: true, color: "#9C6FFF" },
-  {
-    id: 2,
-    name: "عالم رياضيات",
-    icon: "calculator",
-    unlocked: true,
-    color: "#4ECAFF",
-  },
-  {
-    id: 3,
-    name: "مبدع فني",
-    icon: "palette",
-    unlocked: false,
-    color: "#FFB84D",
-  },
-  { id: 4, name: "مستكشف", icon: "compass", unlocked: false, color: "#5FD08A" },
+  { id: 2, name: "عالم رياضيات", icon: "calculator", unlocked: true, color: "#4ECAFF" },
+  { id: 3, name: "مبدع فني", icon: "palette", unlocked: false, color: "#FFB84D" },
+  { id: 4, name: "مستكشف", icon: "compass", unlocked: false, color: "#5FD08A" }
 ];
 
 export const childProfile = {
@@ -227,10 +205,10 @@ export const childProfile = {
   level: 7,
   xp: 2450,
   nextLevelXp: 3000,
-  badges: badges.filter((b) => b.unlocked),
+  badges: badges.filter(b => b.unlocked),
   weeklyScreenTime: 180, // minutes
   totalWatchedVideos: 24,
-  favoriteCategory: "القصص",
+  favoriteCategory: "القصص"
 };
 
 export const parentDashboardData = {
@@ -241,18 +219,18 @@ export const parentDashboardData = {
     { day: "الثلاثاء", minutes: 35 },
     { day: "الأربعاء", minutes: 28 },
     { day: "الخميس", minutes: 22 },
-    { day: "الجمعة", minutes: 20 },
+    { day: "الجمعة", minutes: 20 }
   ],
   topCategories: [
     { name: "القصص", percentage: 40, color: "#9C6FFF" },
     { name: "الفيديوهات", percentage: 30, color: "#FF6B9D" },
     { name: "الألعاب", percentage: 20, color: "#4ECAFF" },
-    { name: "الأنشطة", percentage: 10, color: "#FFB84D" },
+    { name: "الأنشطة", percentage: 10, color: "#FFB84D" }
   ],
   achievements: {
     videosWatched: 24,
     storiesRead: 15,
     gamesCompleted: 8,
-    activitiesDone: 5,
-  },
+    activitiesDone: 5
+  }
 };

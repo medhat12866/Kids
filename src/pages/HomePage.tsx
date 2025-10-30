@@ -15,15 +15,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
     <div className="space-y-8 md:space-y-12">
       {/* Hero Section */}
       <HeroSection />
-
+      
       {/* Quick Navigation Carousel */}
       <CategoryCarousel />
-
+      
       {/* Latest Video */}
       <section className="px-4">
         <div className="flex items-center justify-between mb-6">
           <h2>أحدث الفيديوهات</h2>
-          <button
+          <button 
             onClick={() => onNavigate("videos")}
             className="text-[#9C6FFF] hover:underline"
           >
@@ -45,7 +45,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="px-4">
         <h2 className="mb-6">قصة اليوم</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {stories.slice(0, 4).map((story) => (
+          {stories.slice(0, 2).map((story) => (
             <StoryCard
               key={story.id}
               story={story}
@@ -60,7 +60,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="px-4">
         <div className="flex items-center justify-between mb-6">
           <h2>الألعاب المميزة</h2>
-          <button
+          <button 
             onClick={() => onNavigate("games")}
             className="text-[#9C6FFF] hover:underline"
           >
@@ -82,7 +82,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="px-4">
         <div className="flex items-center justify-between mb-6">
           <h2>أنشطة إبداعية</h2>
-          <button
+          <button 
             onClick={() => onNavigate("activities")}
             className="text-[#9C6FFF] hover:underline"
           >
