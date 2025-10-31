@@ -15,11 +15,11 @@ import {
 import { Button } from "./ui/button";
 
 interface DashboardSidebarProps {
+  onNavigate: (page: string) => void;
   isOpen: boolean;
   onToggle: () => void;
   activeSection: string;
   onSectionChange: (section: string) => void;
-  onNavigate: (page: string) => void;
 }
 
 const menuItems = [
@@ -34,6 +34,7 @@ const menuItems = [
 
 export function DashboardSidebar({
   isOpen,
+  onNavigate,
   onToggle,
   activeSection,
   onSectionChange,
@@ -98,10 +99,9 @@ export function DashboardSidebar({
                     className={`
                       w-full flex items-center gap-3 px-4 py-3 rounded-xl
                       transition-all duration-200
-                      ${
-                        isActive
-                          ? "bg-gradient-to-l from-purple-100 to-pink-100 text-purple-700"
-                          : "text-gray-600 hover:bg-gray-50"
+                      ${isActive
+                        ? "bg-gradient-to-l from-purple-100 to-pink-100 text-purple-700"
+                        : "text-gray-600 hover:bg-gray-50"
                       }
                     `}
                   >
@@ -116,7 +116,11 @@ export function DashboardSidebar({
 
         {/* Logout Button */}
         <div className="p-4 border-t border-gray-200">
-          <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition-colors">
+          <button
+
+
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition-colors"
+          >
             <LogOut className="h-5 w-5 flex-shrink-0" />
             <span>تسجيل الخروج</span>
           </button>

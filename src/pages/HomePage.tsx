@@ -45,7 +45,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="px-4">
         <h2 className="mb-6">قصة اليوم</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {stories.slice(0, 2).map((story) => (
+          {stories.slice(0, 4).map((story) => (
             <StoryCard
               key={story.id}
               story={story}

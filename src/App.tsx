@@ -15,7 +15,7 @@ import DashboardPage from "./pages/DashboardPage";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { AppProvider } from "./contexts/AppContext";
 import "./styles/globals.css";
-
+import { Footer } from "./components/Footer";
 
 type PageType =
   | "home"
@@ -143,8 +143,11 @@ export default function App() {
               onNavigate={handleNavigate}
             />
           )}
-        </div>
 
+          {!hideNavigation && (
+            <Footer currentPage={currentPage} onNavigate={handleNavigate} />
+          )}
+        </div>
       </AppProvider>
     </ErrorBoundary>
   );

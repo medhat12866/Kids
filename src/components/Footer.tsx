@@ -22,10 +22,10 @@ export function Footer() {
             </a>
           ))}
         </div>
-        
+
         {/* Divider */}
         <div className="h-px bg-border mb-6" />
-        
+
         {/* Copyright */}
         <div className="text-center text-muted-foreground space-y-2">
           <div className="flex items-center justify-center gap-2">

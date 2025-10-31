@@ -25,7 +25,7 @@ export function ActivityCard({ activity, onStart }: ActivityCardProps) {
       transition={{ duration: 0.2 }}
     >
       <Card className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200">
+        <div className="relative h-60 aspect-video bg-gradient-to-br from-gray-100 to-gray-200">
           <ImageWithFallback
             src={activity.thumbnail}
             alt={activity.title}

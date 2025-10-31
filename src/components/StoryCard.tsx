@@ -30,7 +30,7 @@ export function StoryCard({ story, onRead, onListen }: StoryCardProps) {
       transition={{ duration: 0.2 }}
     >
       <Card className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div className="relative aspect-[3/4] bg-gradient-to-br from-[#FFB84D]/20 to-[#FF8B67]/20">
+        <div className="relative h-80 aspect-[3/4] bg-gradient-to-br from-[#FFB84D]/20 to-[#FF8B67]/20">
           <ImageWithFallback
             src={story.cover}
             alt={story.title}
