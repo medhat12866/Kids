@@ -19,6 +19,7 @@ interface DashboardSidebarProps {
   onToggle: () => void;
   activeSection: string;
   onSectionChange: (section: string) => void;
+  onNavigate: (page: string) => void;
 }
 
 const menuItems = [
